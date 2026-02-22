@@ -24,7 +24,6 @@ const resetPassword = async () => {
             data: {
                 email: 'admin@viapane.com.br',
                 password: 'admin',
-                confirmPassword: 'admin',
             }
         })
         console.log('Created new admin user.')
