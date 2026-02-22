@@ -45,12 +45,18 @@ export async function getPayloadGlobal<T = any>(slug: string) {
 // Helper to construct Cloudinary URL if needed
 export function getImageUrl(media: any): string | null {
     if (!media) return null;
-    if (typeof media === 'string') return media;
+
+    // Se o media for apenas uma string (URL direta)
+    if (typeof media === 'string') {
+        if (media.startsWith('/')) {
+            return `${CMS_URL}${media}`;
+        }
+        return media;
+    }
 
     const { url, cloudinaryPublicId } = media;
 
     // Construct Cloudinary URL if public ID is present
-    // Fallback to 'dz6j3gd6y' if env var missing in dev (based on successful upload URL)
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dz6j3gd6y';
     if (cloudinaryPublicId) {
         return `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/${cloudinaryPublicId}`;
@@ -59,6 +65,11 @@ export function getImageUrl(media: any): string | null {
     // Use absolute URL if available
     if (url && (url.startsWith('http') || url.startsWith('//'))) {
         return url;
+    }
+
+    // IMPORTANT: Prepend CMS_URL to relative paths so Netlify fetches from the CMS
+    if (url && url.startsWith('/')) {
+        return `${CMS_URL}${url}`;
     }
 
     return url || null;
