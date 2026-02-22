@@ -33,7 +33,7 @@ async function dumpDocx() {
                 output.push(result.value);
                 output.push('\n-----------------------------------\n');
             } catch (err) {
-                output.push(`ERROR reading ${file}: ${err.message}`);
+                output.push(`ERROR reading ${file}: ${(err as Error).message}`);
             }
         }
     }

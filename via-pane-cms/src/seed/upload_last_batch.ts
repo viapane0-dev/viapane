@@ -171,7 +171,7 @@ async function uploadProduct(payload: any, product: any, categoryId: number, cat
                 mainImageId = media.id;
                 console.log(`  > Image uploaded: ${images[0]}`);
             } catch (e) {
-                console.error(`  > Failed to upload image ${images[0]}: ${e.message}`);
+                console.error(`  > Failed to upload image ${images[0]}: ${(e as Error).message}`);
             }
         }
     } else {

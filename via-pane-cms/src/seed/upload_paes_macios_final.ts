@@ -236,7 +236,7 @@ const uploadProducts = async () => {
             console.log(`[Created]`)
 
         } catch (e) {
-            console.error(`[Error: ${e.message}]`)
+            console.error(`[Error: ${(e as Error).message}]`)
         }
     }
 

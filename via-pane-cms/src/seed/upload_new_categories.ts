@@ -301,7 +301,7 @@ async function seed() {
                     });
                 }
             } catch (err: any) {
-                console.error(`    Error saving product ${prodName}:`, err.message);
+                console.error(`    Error saving product ${prodName}:`, (err as Error).message);
                 if (err.data) console.error('    Validation Data:', JSON.stringify(err.data, null, 2));
             }
         }

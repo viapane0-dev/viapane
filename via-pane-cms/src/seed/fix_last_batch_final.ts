@@ -122,7 +122,7 @@ async function fixLastBatchFinal() {
                         });
                         console.log(`> Updated Product Main Image.`);
                     } catch (e: any) {
-                        console.error(`> Error uploading image: ${e.message}`);
+                        console.error(`> Error uploading image: ${(e as Error).message}`);
                     }
                 } else {
                     console.log(`> Folder exists but NO image files found.`);

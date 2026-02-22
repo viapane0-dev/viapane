@@ -97,7 +97,7 @@ async function fixLastBatch() {
                         });
                         console.log(`  > Updated Main Image.`);
                     } catch (e) {
-                        console.error(`  > Error uploading image: ${e.message}`);
+                        console.error(`  > Error uploading image: ${(e as Error).message}`);
                     }
                 } else {
                     console.warn(`  > Folder exists but NO image files found.`);

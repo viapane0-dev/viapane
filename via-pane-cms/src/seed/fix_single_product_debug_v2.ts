@@ -47,7 +47,7 @@ async function debugFix() {
             });
             console.log(`Product Updated.`);
         } catch (e: any) {
-            console.error('Upload Failed:', e.message);
+            console.error('Upload Failed:', (e as Error).message);
             if (e.data) console.error('Error Data:', e.data);
         }
     } else {

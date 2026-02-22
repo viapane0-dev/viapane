@@ -194,7 +194,7 @@ const uploadProducts = async () => {
                     mediaId = media.id
                     process.stdout.write(`[Image Uploaded] `)
                 } catch (e) {
-                    process.stdout.write(`[Image Failed: ${e.message}] `)
+                    process.stdout.write(`[Image Failed: ${(e as Error).message}] `)
                 }
             } else {
                 process.stdout.write(`[No Image File] `)
@@ -237,7 +237,7 @@ const uploadProducts = async () => {
             }
 
         } catch (e) {
-            console.error(`[Product Error: ${e.message}]`)
+            console.error(`[Product Error: ${(e as Error).message}]`)
         }
     }
 
