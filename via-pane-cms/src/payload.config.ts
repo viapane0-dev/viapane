@@ -25,17 +25,14 @@ export default buildConfig({
   routes: {
     admin: '/admin',
   },
-  rateLimit: {
-    trustProxy: true,
-    limit: 5000,
-  },
+
   i18n: {
     supportedLngs: ['pt', 'en'],
     fallbackLng: 'pt',
     translations: {
       pt,
     },
-  },
+  } as any,
   admin: {
     user: Users.slug,
     importMap: {
