@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+    --background: #111;
+    --foreground: #eee;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+}
+
+/* --- Login Screen Fixes --- */
+.login__wrap,
+.login__content,
+#payload-login-container {
+    background-color: #111 !important;
+    color: #eee !important;
+}
+
+.login__wrap label,
+.field-type.text label {
+    color: #ccc !important;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login__wrap input {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.btn--style-primary {
+    background-color: #eee !important;
+    color: #111 !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Global Input Polish --- */
+.field-type label {
+    font-weight: 600;
+    color: #999 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.field-type.text input,
+.field-type.textarea textarea,
+.react-select__control {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+    min-height: 48px;
+}
+
+.field-type.text input:focus,
+.field-type.textarea textarea:focus,
+.react-select__control--is-focused {
+    border-color: #666 !important;
+    background-color: #222 !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+    outline: none;
+}
+
+/* Fix React Select internals */
+.react-select__menu {
+    background-color: #222 !important;
+    border: 1px solid #333 !important;
+    z-index: 50 !important;
+}
+
+.react-select__option {
+    background-color: #222 !important;
+    color: #ccc !important;
+    cursor: pointer;
+}
+
+.react-select__option--is-focused,
+.react-select__option:hover {
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+.react-select__single-value {
+    color: #eee !important;
+}
+
+.react-select__indicator svg {
+    fill: #666 !important;
+}
+
+/* --- Sidebar Polish --- */
+aside,
+.nav {
+    background-color: #0a0a0a !important;
+    border-right: 1px solid #222;
+}
+
+.nav-group__toggle {
+    color: #666 !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 16px 8px;
+    font-weight: bold;
+}
+
+.nav__link {
+    color: #aaa !important;
+    border-radius: 4px;
+    margin: 2px 8px;
+    padding: 10px 12px;
+    transition: all 0.15s;
+    font-size: 0.95rem;
+    display: block;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+.nav__link--active {
+    background-color: #333 !important;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+/* --- Tabs Fixes --- */
+.tabs-field__tabs {
+    display: flex;
+    gap: 8px !important;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0px;
+    margin-bottom: 24px;
+}
+
+.tabs-field__tab-button {
+    padding: 12px 20px !important;
+    background: #111 !important;
+    color: #666 !important;
+    border-radius: 8px 8px 0 0 !important;
+    border: 1px solid transparent !important;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-right: 2px !important;
+    font-size: 0.9rem;
+}
+
+.tabs-field__tab-button:hover {
+    background: #1a1a1a !important;
+    color: #999 !important;
+}
+
+.tabs-field__tab-button--active {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    font-weight: bold;
+    border: 1px solid #333 !important;
+    border-bottom: 1px solid #1a1a1a !important;
+    margin-bottom: -1px !important;
+    z-index: 10;
+}
+
+.tabs-field__content {
+    margin-top: 0;
+    padding: 32px;
+    background: #1a1a1a;
+    border-radius: 0 4px 4px 4px;
+    border: 1px solid #333;
+    border-top: none;
+}

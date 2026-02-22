@@ -1,0 +1,40 @@
+{
+    "name": "via-pane-cms",
+    "version": "1.0.0",
+    "description": "CMS for Via Pane",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "dev": "next dev -p 3001",
+        "build": "next build",
+        "start": "next start -p 3001",
+        "lint": "next lint",
+        "generate:types": "payload generate:types",
+        "generate:importmap": "payload generate:importmap",
+        "seed": "tsx src/seed/index.ts"
+    },
+    "dependencies": {
+        "@jhb.software/payload-cloudinary-plugin": "latest",
+        "@payloadcms/db-postgres": "^3.76.1",
+        "@payloadcms/next": "^3.76.1",
+        "@payloadcms/richtext-lexical": "^3.76.1",
+        "dotenv": "^17.2.3",
+        "graphql": "^16.8.1",
+        "mammoth": "^1.11.0",
+        "next": "15.4.11",
+        "payload": "^3.76.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "sharp": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.25",
+        "@types/pg": "^8.16.0",
+        "@types/react": "^18.2.64",
+        "@types/react-dom": "^18.2.21",
+        "eslint": "^8",
+        "eslint-config-next": "15.0.0",
+        "pg": "^8.18.0",
+        "typescript": "^5.4.2"
+    }
+}
