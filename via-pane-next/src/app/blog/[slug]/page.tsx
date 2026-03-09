@@ -1,6 +1,7 @@
 import { getPayloadCollection, serializeLexical } from '@/lib/api';
 import Link from 'next/link';
 import { ArrowLeft, User, Calendar, Clock, Tag } from 'lucide-react';
+import { RichTextRenderer } from '@/components/RichTextRenderer';
 
 interface PageProps {
     params: Promise<{ slug: string }>;
@@ -109,21 +110,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     prose-img:rounded-xl">
 
                     {/* Render content based on structure */}
-                    {/* Since we might have HTML in 'children' text nodes from seed or properly structured Lexical */}
-                    {/* For now, we doing a simple render - ideally need a full Lexical renderer */}
-
-                    {post.content?.root?.children?.map((node: any, idx: number) => {
-                        if (node.type === 'html' || (node.children?.[0]?.type === 'html')) {
-                            // Handle raw HTML injections from our seed script
-                            const htmlContent = node.children?.[0]?.text || node.text || '';
-                            return <div key={idx} dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-                        }
-
-                        // Fallback text rendering
-                        const text = serializeLexical(node).join(' ');
-                        if (!text) return null;
-                        return <p key={idx} className="mb-4">{text}</p>;
-                    })}
+                    <RichTextRenderer content={post.content} />
                 </div>
             </article>
 
