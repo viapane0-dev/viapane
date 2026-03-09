@@ -7,7 +7,7 @@ export function BrazilMap({ activeRegion, onRegionClick }: BrazilMapProps) {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {/* Mapa do Brasil SVG da Wikimedia */}
-      <div className="relative w-full max-w-[400px] h-full">
+      <div className="relative w-full max-w-[400px]">
         <img
           src="/assets/brazil-map.svg"
           alt="Mapa do Brasil"
