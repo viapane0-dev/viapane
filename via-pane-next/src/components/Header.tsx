@@ -33,7 +33,7 @@ export function Header({ onSearch }: HeaderProps) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 cursor-pointer">
-            <img src={logoViaPane} alt="Via Pane" className="h-16" />
+            <img src={logoViaPane} alt="Via Pane" className="h-20 w-auto" />
           </Link>
 
           {/* Navigation Menu */}
@@ -79,7 +79,7 @@ export function Header({ onSearch }: HeaderProps) {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyPress}
-                className="pl-4 pr-10 py-2 w-64 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-sm"
+                className="pl-4 pr-10 py-2 w-40 md:w-64 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-sm transition-all"
               />
               <button
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#001A33] hover:text-[#D4AF37] transition-colors"
@@ -96,7 +96,7 @@ export function Header({ onSearch }: HeaderProps) {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
       </div>

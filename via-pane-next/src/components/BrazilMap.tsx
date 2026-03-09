@@ -66,7 +66,7 @@ export function BrazilMap({ activeRegion, onRegionClick }: BrazilMapProps) {
           <button
             onClick={() => onRegionClick?.('sp')}
             className="absolute group cursor-pointer"
-            style={{ top: '68%', left: '52%' }}
+            style={{ top: '62%', left: '54%' }}
           >
             <div className="relative flex items-center justify-center">
               <div

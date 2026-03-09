@@ -9,27 +9,40 @@ export function NewsletterSection() {
             <div className="flex items-center justify-center mb-6">
               <Mail size={48} className="text-[#D4AF37]" />
             </div>
-            
+
             <h3 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#001A33] mb-4">
-              Assine nossa newsletter
+              Fale com a gente e assine nossa Newsletter
             </h3>
-            
+
             <p className="font-['Open_Sans'] text-gray-700 mb-8 text-lg">
-              Receba novidades, receitas exclusivas e conteúdos sobre o mundo da panificação
+              Envie suas dúvidas, sugestões e receba também conteúdos e receitas exclusivas.
             </p>
 
-            <form className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
-              <input
-                type="email"
-                placeholder="Seu melhor e-mail"
-                className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base"
-                required
+            <form className="flex flex-col gap-4 max-w-2xl mx-auto">
+              <div className="flex flex-col md:flex-row gap-4">
+                <input
+                  type="text"
+                  placeholder="Seu nome"
+                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Seu melhor e-mail"
+                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base"
+                  required
+                />
+              </div>
+              <textarea
+                placeholder="Envie sua dúvida, sugestão ou comentário..."
+                rows={4}
+                className="w-full px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base resize-none"
               />
               <button
                 type="submit"
-                className="bg-[#001A33] hover:bg-[#002647] text-white font-['Open_Sans'] font-semibold px-10 py-4 rounded-lg transition-all duration-300 text-base whitespace-nowrap"
+                className="bg-[#001A33] hover:bg-[#002647] text-white font-['Open_Sans'] font-semibold px-10 py-4 rounded-lg transition-all duration-300 text-base w-full md:w-auto md:self-end mt-2"
               >
-                Assinar
+                Enviar e Assinar
               </button>
             </form>
 

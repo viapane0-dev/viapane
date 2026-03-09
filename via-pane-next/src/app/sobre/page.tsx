@@ -58,7 +58,7 @@ export default function AboutPage() {
                     </div>
 
                     <p className="font-['Open_Sans'] text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto text-center">
-                        Com 20 anos de história, a Via Pane é mais que uma indústria de pré-misturas para panificação e confeitaria — somos parceiros dedicados de quem transforma farinha em alimento e afeto.
+                        Com 20 anos de história, a Via Pane é mais que uma indústria de pré-misturas para panificação e confeitaria, somos parceiros dedicados de quem transforma farinha em alimento e afeto.
                     </p>
                 </div>
             </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                                 </h3>
                             </div>
                             <p className="font-['Open_Sans'] text-gray-700 leading-relaxed text-lg">
-                                Facilitar o dia a dia de quem vive da panificação e confeitaria, oferecendo soluções de alta qualidade que unem tradição, inovação e praticidade. Desenvolvemos pré-misturas e produtos com excelência técnica, cuidado artesanal e proximidade verdadeira com nossos clientes — transformando trabalho em sabor, rotina em realização e ingredientes em histórias que nutrem pessoas e negócios.
+                                Facilitar o dia a dia de quem vive da panificação e confeitaria, oferecendo soluções de alta qualidade que unem tradição, inovação e praticidade. Desenvolvemos pré-misturas e produtos com excelência técnica, cuidado artesanal e proximidade verdadeira com nossos clientes, transformando trabalho em sabor, rotina em realização e ingredientes em histórias que nutrem pessoas e negócios.
                             </p>
                         </div>
 

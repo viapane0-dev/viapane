@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Paperclip } from 'lucide-react';
 import { useState } from 'react';
 
 interface Office {
@@ -17,7 +17,7 @@ interface Office {
 const offices: Office[] = [
   {
     id: 'matriz-sp',
-    name: 'Matriz Via Pane',
+    name: 'Matriz São Paulo',
     company: 'VIA PANE IND. COM. PROD. ALIM. LTDA',
     address: 'Rua Itaquera, 421 - Jd. Stella',
     city: 'Santo André',
@@ -27,7 +27,7 @@ const offices: Office[] = [
   },
   {
     id: 'recife',
-    name: 'Via Pane Recife',
+    name: 'Sede ou Filial Recife',
     company: 'VIA PANE IND. COM. PROD. ALIM. LTDA',
     address: 'Rod BR 101 Sul, 34318, GP 04 D BL 07, Dist. Ind. Diper',
     city: 'Cabo de Santo Agostinho',
@@ -37,7 +37,7 @@ const offices: Office[] = [
   },
   {
     id: 'paraiba',
-    name: 'Via Pane Paraíba',
+    name: 'Sede ou Filial Paraíba',
     company: 'VIA PANE IND. COM. PROD. ALIM. LTDA',
     address: 'Rod BR 101 KM 96,20 - Quadra única galpão VII - Distrito Industrial',
     city: 'Conde',
@@ -48,6 +48,8 @@ const offices: Office[] = [
 ];
 
 export function ContactPage() {
+  const [activeTab, setActiveTab] = useState<'comercial' | 'trabalhe-conosco'>('comercial');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,6 +58,15 @@ export function ContactPage() {
     subject: '',
     message: ''
   });
+
+  const [workFormData, setWorkFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    message: ''
+  });
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,11 +83,38 @@ export function ContactPage() {
     });
   };
 
+  const handleWorkSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Work Form submitted:', workFormData, resumeFile);
+    alert('Mensagem e currículo enviados com sucesso! Entraremos em contato em breve.');
+    setWorkFormData({
+      name: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      message: ''
+    });
+    setResumeFile(null);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleWorkChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setWorkFormData({
+      ...workFormData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setResumeFile(e.target.files[0]);
+    }
   };
 
   return (
@@ -95,127 +133,283 @@ export function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Contact Forms Container */}
           <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33] mb-6">
-              Envie sua mensagem
-            </h2>
-            <p className="font-['Open_Sans'] text-gray-600 mb-8">
-              Preencha o formulário abaixo e nossa equipe entrará em contato com você em breve.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                  Nome completo *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
-                  placeholder="Seu nome"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                    E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                    Telefone *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
-                    placeholder="(00) 00000-0000"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                  Empresa
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
-                  placeholder="Nome da empresa"
-                />
-              </div>
-
-              <div>
-                <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                  Assunto *
-                </label>
-                <select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
-                >
-                  <option value="">Selecione um assunto</option>
-                  <option value="comercial">Comercial / Vendas</option>
-                  <option value="produtos">Informações sobre produtos</option>
-                  <option value="parceria">Oportunidades de parceria</option>
-                  <option value="suporte">Suporte técnico</option>
-                  <option value="outros">Outros assuntos</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
-                  Mensagem *
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] resize-none"
-                  placeholder="Digite sua mensagem aqui..."
-                />
-              </div>
-
+            {/* Tabs */}
+            <div className="flex border-b border-gray-200 mb-8 -mx-8 px-8 cursor-pointer">
               <button
-                type="submit"
-                className="w-full bg-[#D4AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors flex items-center justify-center gap-2"
+                type="button"
+                onClick={() => setActiveTab('comercial')}
+                className={`pb-4 mr-8 font-['Open_Sans'] font-semibold text-lg transition-colors border-b-2 ${activeTab === 'comercial'
+                  ? 'border-[#D4AF37] text-[#001A33]'
+                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#D4AF37]'
+                  }`}
               >
-                <Send size={20} />
-                Enviar mensagem
+                Contato Comercial
               </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab('trabalhe-conosco')}
+                className={`pb-4 font-['Open_Sans'] font-semibold text-lg transition-colors border-b-2 ${activeTab === 'trabalhe-conosco'
+                  ? 'border-[#D4AF37] text-[#001A33]'
+                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#D4AF37]'
+                  }`}
+              >
+                Trabalhe Conosco
+              </button>
+            </div>
 
-              <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
-                Ou envie um e-mail direto para:{' '}
-                <a href="mailto:mkt@viapane.com.br" className="text-[#D4AF37] hover:underline font-semibold">
-                  mkt@viapane.com.br
-                </a>
-              </p>
-            </form>
+            {activeTab === 'comercial' ? (
+              <div className="animate-in fade-in duration-500">
+                <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33] mb-6">
+                  Envie sua mensagem
+                </h2>
+                <p className="font-['Open_Sans'] text-gray-600 mb-8">
+                  Preencha o formulário abaixo e nossa equipe entrará em contato com você em breve.
+                </p>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Nome completo *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                      placeholder="Seu nome"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                        E-mail *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                        placeholder="seu@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                        Telefone *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                        placeholder="(00) 00000-0000"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Empresa
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                      placeholder="Nome da empresa"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Assunto *
+                    </label>
+                    <select
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                    >
+                      <option value="">Selecione um assunto</option>
+                      <option value="comercial">Comercial / Vendas</option>
+                      <option value="produtos">Informações sobre produtos</option>
+                      <option value="parceria">Oportunidades de parceria</option>
+                      <option value="suporte">Suporte técnico</option>
+                      <option value="outros">Outros assuntos</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Mensagem *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] resize-none"
+                      placeholder="Digite sua mensagem aqui..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-[#D4AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Send size={20} />
+                    Enviar mensagem
+                  </button>
+
+                  <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
+                    Ou envie um e-mail direto para:{' '}
+                    <a href="mailto:mkt@viapane.com.br" className="text-[#D4AF37] hover:underline font-semibold">
+                      mkt@viapane.com.br
+                    </a>
+                  </p>
+                </form>
+              </div>
+            ) : (
+              <div className="animate-in fade-in duration-500">
+                <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33] mb-6">
+                  Faça parte da Via Pane
+                </h2>
+                <p className="font-['Open_Sans'] text-gray-600 mb-8">
+                  Deixe seu currículo conosco para futuras oportunidades na matriz ou em nossas filiais.
+                </p>
+
+                <form onSubmit={handleWorkSubmit} className="space-y-6">
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Nome completo *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={workFormData.name}
+                      onChange={handleWorkChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                      placeholder="Seu nome"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                        E-mail *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={workFormData.email}
+                        onChange={handleWorkChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                        placeholder="seu@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                        Telefone / WhatsApp *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={workFormData.phone}
+                        onChange={handleWorkChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                        placeholder="(00) 00000-0000"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      LinkedIn
+                    </label>
+                    <input
+                      type="url"
+                      name="linkedin"
+                      value={workFormData.linkedin}
+                      onChange={handleWorkChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans']"
+                      placeholder="https://linkedin.com/in/seu-perfil"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Apresentação *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={workFormData.message}
+                      onChange={handleWorkChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] resize-none"
+                      placeholder="Conte-nos um pouco sobre sua experiência e área de interesse..."
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-['Open_Sans'] font-semibold text-[#001A33] mb-2">
+                      Anexar Currículo (PDF, DOCX) *
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf,.doc,.docx"
+                        onChange={handleFileChange}
+                        required
+                        className="hidden"
+                      />
+                      <label
+                        htmlFor="resume"
+                        className="flex items-center justify-center flex-col md:flex-row gap-3 w-full px-4 py-8 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-[#D4AF37] hover:bg-[#F9F7F2] transition-colors"
+                      >
+                        <Paperclip size={24} className={resumeFile ? "text-[#D4AF37]" : "text-gray-400"} />
+                        <span className={resumeFile ? "text-[#001A33] font-medium text-center" : "text-gray-500 text-center"}>
+                          {resumeFile ? resumeFile.name : "Clique para selecionar o arquivo do currículo"}
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-[#D4AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Send size={20} />
+                    Enviar currículo
+                  </button>
+
+                  <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
+                    Ou envie diretamente para:{' '}
+                    <a href="mailto:rh@viapane.com.br" className="text-[#D4AF37] hover:underline font-semibold">
+                      rh@viapane.com.br
+                    </a>
+                  </p>
+                </form>
+              </div>
+            )}
           </div>
 
           {/* Contact Information */}
@@ -279,9 +473,6 @@ export function ContactPage() {
                   <h3 className="font-['Playfair_Display'] text-xl font-bold">
                     E-mail Comercial
                   </h3>
-                  <p className="font-['Open_Sans'] text-sm text-gray-300">
-                    Resposta em até 24 horas
-                  </p>
                 </div>
               </div>
               <a
@@ -304,7 +495,7 @@ export function ContactPage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Sábado:</span>
-                  <span className="font-semibold text-[#001A33]">8h às 12h</span>
+                  <span className="font-semibold text-gray-400">Fechado</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Domingo:</span>
@@ -316,20 +507,7 @@ export function ContactPage() {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-[#001A33] text-white py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-['Playfair_Display'] text-4xl font-bold mb-4">
-            Seja um parceiro Via Pane
-          </h2>
-          <p className="font-['Open_Sans'] text-lg text-gray-300 mb-8">
-            Descubra as oportunidades de parceria e distribua nossos produtos premium em sua região
-          </p>
-          <button className="bg-[#D4AF37] text-white px-8 py-3 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors">
-            Saiba mais sobre parcerias
-          </button>
-        </div>
-      </div>
+
     </div>
   );
 }

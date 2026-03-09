@@ -19,7 +19,7 @@ export function OfficesSection() {
 
   const offices: Record<string, OfficeInfo> = {
     sp: {
-      name: "Matriz Via Pane",
+      name: "Matriz São Paulo",
       company: "VIA PANE IND. COM. PROD. ALIM. LTDA",
       address: "Rua Itaquera, 421 - Jd. Stella",
       city: "Santo André",
@@ -28,7 +28,7 @@ export function OfficesSection() {
       phones: ["(11) 4426-2896", "(11) 3458-6027", "(11) 4352-1984"]
     },
     recife: {
-      name: "Via Pane Recife",
+      name: "Sede ou Filial Recife",
       company: "VIA PANE IND. COM. PROD. ALIM. LTDA",
       address: "Rod BR 101 Sul, 34318, GP 04 D BL 07 - Dist. Ind. Diper",
       city: "Cabo de Santo Agostinho",
@@ -37,7 +37,7 @@ export function OfficesSection() {
       phones: ["(81) 99857-0020"]
     },
     paraiba: {
-      name: "Via Pane Paraíba",
+      name: "Sede ou Filial Paraíba",
       company: "VIA PANE IND. COM. PROD. ALIM. LTDA",
       address: "Rod BR 101 KM 96,20 - Quadra única galpão VII - Distrito Industrial",
       city: "Conde",
@@ -74,8 +74,8 @@ export function OfficesSection() {
               <button
                 onClick={() => setActiveTab('sp')}
                 className={`font-['Open_Sans'] font-semibold px-6 py-3 transition-colors ${activeTab === 'sp'
-                    ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
-                    : 'text-gray-600 hover:text-[#001A33]'
+                  ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
+                  : 'text-gray-600 hover:text-[#001A33]'
                   }`}
               >
                 Matriz
@@ -83,8 +83,8 @@ export function OfficesSection() {
               <button
                 onClick={() => setActiveTab('recife')}
                 className={`font-['Open_Sans'] font-semibold px-6 py-3 transition-colors ${activeTab === 'recife'
-                    ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
-                    : 'text-gray-600 hover:text-[#001A33]'
+                  ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
+                  : 'text-gray-600 hover:text-[#001A33]'
                   }`}
               >
                 Recife
@@ -92,8 +92,8 @@ export function OfficesSection() {
               <button
                 onClick={() => setActiveTab('paraiba')}
                 className={`font-['Open_Sans'] font-semibold px-6 py-3 transition-colors ${activeTab === 'paraiba'
-                    ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
-                    : 'text-gray-600 hover:text-[#001A33]'
+                  ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]'
+                  : 'text-gray-600 hover:text-[#001A33]'
                   }`}
               >
                 Paraíba

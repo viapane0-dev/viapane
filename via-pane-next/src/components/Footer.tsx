@@ -33,10 +33,10 @@ export function Footer() {
         {/* Three Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Contatos */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-['Playfair_Display'] text-2xl font-bold mb-6">Contatos</h4>
-            <div className="space-y-4 font-['Open_Sans']">
-              <div className="flex items-start gap-3">
+            <div className="space-y-4 font-['Open_Sans'] flex flex-col items-center md:items-start">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
                 <Phone size={20} className="text-[#D4AF37] flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">Matriz São Paulo</p>
@@ -45,7 +45,7 @@ export function Footer() {
                   <p className="text-gray-300 text-sm">(11) 4352-1984</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full pt-4 md:pt-0">
                 <Mail size={20} className="text-[#D4AF37] flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">E-mail</p>
@@ -58,7 +58,7 @@ export function Footer() {
           </div>
 
           {/* Links e Redes Sociais */}
-          <div className="text-center">
+          <div className="text-center md:justify-self-center">
             <h4 className="font-['Playfair_Display'] text-2xl font-bold mb-6">Navegação</h4>
             <nav className="space-y-3 font-['Open_Sans'] mb-8 flex flex-col items-center">
               <Link
@@ -96,7 +96,7 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex justify-center gap-4">
               <a
-                href="https://www.youtube.com/@Viapanebrasil/podcasts"
+                href="https://www.youtube.com/@Viapanebrasil/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#D4AF37] hover:bg-[#c29d2f] p-3 rounded-full transition-colors"
@@ -135,10 +135,10 @@ export function Footer() {
           </div>
 
           {/* Endereços */}
-          <div>
+          <div className="md:justify-self-end text-center md:text-left">
             <h4 className="font-['Playfair_Display'] text-2xl font-bold mb-6">Endereços</h4>
-            <div className="space-y-6 font-['Open_Sans']">
-              <div className="flex items-start gap-3">
+            <div className="space-y-6 font-['Open_Sans'] flex flex-col items-center md:items-start">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
                 <MapPin size={20} className="text-[#D4AF37] flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">Matriz - Santo André/SP</p>
@@ -148,20 +148,20 @@ export function Footer() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
                 <MapPin size={20} className="text-[#D4AF37] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Recife/PE</p>
+                  <p className="font-semibold mb-1">Sede ou Filial Recife</p>
                   <p className="text-gray-300 text-sm">
                     Rod BR 101 Sul, 34318<br />
                     Cabo de Santo Agostinho - PE
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
                 <MapPin size={20} className="text-[#D4AF37] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Conde/PB</p>
+                  <p className="font-semibold mb-1">Sede ou Filial Paraíba</p>
                   <p className="text-gray-300 text-sm">
                     Rod BR 101 KM 96,20<br />
                     Conde - PB, 58322-000

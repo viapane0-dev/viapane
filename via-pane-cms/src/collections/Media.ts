@@ -13,6 +13,7 @@ export const Media: CollectionConfig = {
         delete: () => true,
     },
     upload: {
+        disableLocalStorage: true,
         staticDir: 'media',
         adminThumbnail: 'thumbnail',
         imageSizes: [

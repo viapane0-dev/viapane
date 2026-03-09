@@ -4,7 +4,7 @@ const paocastLogo = '/assets/6b28b7cca9f858ab1fe830cae829a2dd66358977.png';
 
 export function PodcastSection() {
   return (
-    <section className="bg-gradient-to-br from-[#3d5a99] via-[#4a6bb8] to-[#3d5a99] py-20 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#001A33] via-[#002a52] to-[#001A33] py-20 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-64 h-64 bg-[#D4AF37] rounded-full blur-3xl"></div>
@@ -31,7 +31,7 @@ export function PodcastSection() {
             </p>
 
             <p className="font-['Open_Sans'] text-lg text-gray-200 mb-10">
-              Toda semana, novos episódios com profissionais do setor, donos de padarias,
+              Todo mês, novos episódios com profissionais do setor, donos de padarias,
               mestres padeiros e empreendedores que transformam farinha em sonhos.
             </p>
 
@@ -52,7 +52,7 @@ export function PodcastSection() {
                 </a>
 
                 <a
-                  href="https://www.youtube.com/@Viapanebrasil/podcasts"
+                  href="https://www.youtube.com/@Viapanebrasil/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-[#FF0000] hover:bg-[#cc0000] text-white px-6 py-3 rounded-xl font-['Open_Sans'] font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1"

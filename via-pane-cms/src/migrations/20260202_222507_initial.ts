@@ -1,7 +1,7 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
-  await db.execute(sql`
+  await db.execute((sql`
    CREATE TYPE "public"."enum_home_hero_banner_type" AS ENUM('dynamic', 'static');
   CREATE TABLE "users_sessions" (
   	"_order" integer NOT NULL,
@@ -268,11 +268,11 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE INDEX "home_rels_order_idx" ON "home_rels" USING btree ("order");
   CREATE INDEX "home_rels_parent_idx" ON "home_rels" USING btree ("parent_id");
   CREATE INDEX "home_rels_path_idx" ON "home_rels" USING btree ("path");
-  CREATE INDEX "home_rels_products_id_idx" ON "home_rels" USING btree ("products_id");`)
+  CREATE INDEX "home_rels_products_id_idx" ON "home_rels" USING btree ("products_id");` as unknown) as any)
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
-  await db.execute(sql`
+  await db.execute((sql`
    DROP TABLE "users_sessions" CASCADE;
   DROP TABLE "users" CASCADE;
   DROP TABLE "media" CASCADE;
@@ -291,5 +291,5 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   DROP TABLE "home_hero_banner" CASCADE;
   DROP TABLE "home" CASCADE;
   DROP TABLE "home_rels" CASCADE;
-  DROP TYPE "public"."enum_home_hero_banner_type";`)
+  DROP TYPE "public"."enum_home_hero_banner_type";` as unknown) as any)
 }
