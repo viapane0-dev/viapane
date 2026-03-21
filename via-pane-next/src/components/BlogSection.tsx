@@ -18,13 +18,13 @@ function BlogCard({ image, category, title, author, date, slug }: BlogCardProps)
           alt={title}
           className="w-full h-64 object-cover"
         />
-        <span className="absolute top-4 left-4 bg-[#D4AF37] text-white px-4 py-1 text-xs font-['Open_Sans'] font-semibold rounded">
+        <span className="absolute top-4 left-4 bg-[#e1ab42] text-white px-4 py-1 text-xs font-['Open_Sans'] font-semibold rounded">
           {category}
         </span>
       </div>
 
       <div className="p-6">
-        <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#001A33] mb-4 hover:text-[#D4AF37] transition-colors">
+        <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#001A33] mb-4 hover:text-[#e1ab42] transition-colors">
           {title}
         </h3>
         <div className="flex items-center gap-3 text-sm text-gray-600 font-['Open_Sans']">

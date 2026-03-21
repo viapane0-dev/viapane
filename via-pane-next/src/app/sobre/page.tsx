@@ -234,7 +234,7 @@ export default function AboutPage() {
                         Vamos crescer juntos?
                     </h2>
                     <p className="font-['Open_Sans'] text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                        Descubra como a Via Pane pode ser a parceira ideal para o seu negócio
+                        Descubra como a Via Pane pode ser a parceira ideal para o seu negócio!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link

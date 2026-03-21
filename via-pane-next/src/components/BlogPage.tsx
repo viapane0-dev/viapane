@@ -59,9 +59,9 @@ export default function BlogPage({ initialPosts = [], initialCategories }: BlogP
                                 placeholder="Buscar artigos..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-6 pr-14 py-4 rounded-lg border-2 border-[#D4AF37] bg-white text-[#001A33] font-['Open_Sans'] text-base focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                                className="w-full pl-6 pr-14 py-4 rounded-lg border-2 border-[#e1ab42] bg-white text-[#001A33] font-['Open_Sans'] text-base focus:outline-none focus:ring-2 focus:ring-[#e1ab42]"
                             />
-                            <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#D4AF37] hover:bg-[#c29d2f] text-white p-2 rounded-lg transition-colors">
+                            <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#e1ab42] hover:bg-[#c29d2f] text-white p-2 rounded-lg transition-colors">
                                 <Search size={20} />
                             </button>
                         </div>
@@ -78,7 +78,7 @@ export default function BlogPage({ initialPosts = [], initialCategories }: BlogP
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`px-6 py-2 rounded-full font-['Open_Sans'] font-medium text-sm transition-all ${selectedCategory === category
-                                    ? 'bg-[#D4AF37] text-white'
+                                    ? 'bg-[#e1ab42] text-white'
                                     : 'bg-gray-100 text-[#001A33] hover:bg-gray-200'
                                     }`}
                             >
@@ -113,7 +113,7 @@ export default function BlogPage({ initialPosts = [], initialCategories }: BlogP
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                             <div className="absolute top-4 left-4">
-                                                <span className="bg-[#D4AF37] text-white px-4 py-1 rounded-full text-xs font-['Open_Sans'] font-semibold">
+                                                <span className="bg-[#e1ab42] text-white px-4 py-1 rounded-full text-xs font-['Open_Sans'] font-semibold">
                                                     {post.category}
                                                 </span>
                                             </div>
@@ -121,7 +121,7 @@ export default function BlogPage({ initialPosts = [], initialCategories }: BlogP
 
                                         {/* Post Content */}
                                         <div className="p-6">
-                                            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#001A33] mb-3 group-hover:text-[#D4AF37] transition-colors">
+                                            <h3 className="font-['Playfair_Display'] text-2xl font-bold text-[#001A33] mb-3 group-hover:text-[#e1ab42] transition-colors">
                                                 {post.title}
                                             </h3>
                                             <p className="font-['Open_Sans'] text-gray-600 text-sm mb-4 line-clamp-3">

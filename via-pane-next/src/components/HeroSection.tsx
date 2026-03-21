@@ -40,7 +40,7 @@ export function HeroSection({
         </p>
         <Link
           href={buttonUrl}
-          className="bg-[#D4AF37] hover:bg-[#c29d2f] text-white font-['Open_Sans'] font-semibold px-12 py-4 rounded-lg transition-all duration-300 text-base inline-block"
+          className="bg-[#e1ab42] hover:bg-[#c29d2f] text-white font-['Open_Sans'] font-semibold px-12 py-4 rounded-lg transition-all duration-300 text-base inline-block"
         >
           {buttonText}
         </Link>

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { ProductsPage, ProductLine } from '@/components/ProductsPage';
 import { getPayloadCollection, getImageUrl } from '@/lib/api';
 
@@ -59,5 +60,9 @@ export default async function Page() {
     // But here we pass the prop if we found lines.
     const initialProductLines = cmsLines.length > 0 ? cmsLines : undefined;
 
-    return <ProductsPage initialProductLines={initialProductLines} />;
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center font-['Open_Sans'] text-gray-600">Carregando produtos...</div>}>
+            <ProductsPage initialProductLines={initialProductLines} />
+        </Suspense>
+    );
 }

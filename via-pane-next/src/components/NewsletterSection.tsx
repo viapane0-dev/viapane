@@ -7,7 +7,7 @@ export function NewsletterSection() {
         <div className="bg-[#EAE4D6] rounded-lg p-12">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center mb-6">
-              <Mail size={48} className="text-[#D4AF37]" />
+              <Mail size={48} className="text-[#e1ab42]" />
             </div>
 
             <h3 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#001A33] mb-4">
@@ -23,20 +23,20 @@ export function NewsletterSection() {
                 <input
                   type="text"
                   placeholder="Seu nome"
-                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base"
+                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#e1ab42] font-['Open_Sans'] text-base"
                   required
                 />
                 <input
                   type="email"
                   placeholder="Seu melhor e-mail"
-                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base"
+                  className="flex-1 px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#e1ab42] font-['Open_Sans'] text-base"
                   required
                 />
               </div>
               <textarea
                 placeholder="Envie sua dúvida, sugestão ou comentário..."
                 rows={4}
-                className="w-full px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#D4AF37] font-['Open_Sans'] text-base resize-none"
+                className="w-full px-6 py-4 rounded-lg border border-gray-300 focus:outline-none focus:border-[#e1ab42] font-['Open_Sans'] text-base resize-none"
               />
               <button
                 type="submit"

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 
 
@@ -28,18 +29,27 @@ export interface ProductsPageProps {
 }
 
 export function ProductsPage({ initialProductLines = productLines }: ProductsPageProps) {
+  const searchParams = useSearchParams();
+  const searchParam = searchParams.get('search') || '';
+
   const [activeCategory, setActiveCategory] = useState<'all' | 'panificacao' | 'confeitaria' | 'ingredientes'>('all');
   const [activeLineId, setActiveLineId] = useState<string | null>(null);
 
   const linesToUse = initialProductLines || productLines;
 
-  const filteredLines = linesToUse.filter(line => {
+  // Filtragem Global de Arrays (comporta Busca e Categorias)
+  const filteredLines = linesToUse.map(line => ({
+    ...line,
+    products: searchParam
+      ? line.products.filter(p => p.name.toLowerCase().includes(searchParam.toLowerCase()))
+      : line.products
+  })).filter(line => {
+    if (searchParam) return line.products.length > 0;
     if (activeCategory === 'all') return true;
     return line.category === activeCategory;
   });
-  // ...
 
-  const displayedLines = activeLineId
+  const displayedLines = activeLineId && !searchParam
     ? filteredLines.filter(line => line.id === activeLineId)
     : filteredLines;
 
@@ -67,7 +77,7 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
                 setActiveLineId(null);
               }}
               className={`px-6 py-2 rounded-full font-['Open_Sans'] font-semibold whitespace-nowrap transition-colors ${activeCategory === 'all'
-                ? 'bg-[#D4AF37] text-white'
+                ? 'bg-[#e1ab42] text-white'
                 : 'bg-gray-100 text-[#001A33] hover:bg-gray-200'
                 }`}
             >
@@ -79,7 +89,7 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
                 setActiveLineId(null);
               }}
               className={`px-6 py-2 rounded-full font-['Open_Sans'] font-semibold whitespace-nowrap transition-colors ${activeCategory === 'panificacao'
-                ? 'bg-[#D4AF37] text-white'
+                ? 'bg-[#e1ab42] text-white'
                 : 'bg-gray-100 text-[#001A33] hover:bg-gray-200'
                 }`}
             >
@@ -91,7 +101,7 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
                 setActiveLineId(null);
               }}
               className={`px-6 py-2 rounded-full font-['Open_Sans'] font-semibold whitespace-nowrap transition-colors ${activeCategory === 'confeitaria'
-                ? 'bg-[#D4AF37] text-white'
+                ? 'bg-[#e1ab42] text-white'
                 : 'bg-gray-100 text-[#001A33] hover:bg-gray-200'
                 }`}
             >
@@ -103,7 +113,7 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
                 setActiveLineId(null);
               }}
               className={`px-6 py-2 rounded-full font-['Open_Sans'] font-semibold whitespace-nowrap transition-colors ${activeCategory === 'ingredientes'
-                ? 'bg-[#D4AF37] text-white'
+                ? 'bg-[#e1ab42] text-white'
                 : 'bg-gray-100 text-[#001A33] hover:bg-gray-200'
                 }`}
             >
@@ -153,7 +163,7 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
               <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33] mb-2">
                 {line.name}
               </h2>
-              <div className="w-20 h-1 bg-[#D4AF37]"></div>
+              <div className="w-20 h-1 bg-[#e1ab42]"></div>
             </div>
 
             {/* Products Grid */}
@@ -177,9 +187,9 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
                       <div className="relative aspect-square bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="text-center p-4">
-                            <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[#D4AF37] bg-opacity-10 flex items-center justify-center">
+                            <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-[#e1ab42] bg-opacity-10 flex items-center justify-center">
                               <svg
-                                className="w-8 h-8 text-[#D4AF37]"
+                                className="w-8 h-8 text-[#e1ab42]"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -201,10 +211,10 @@ export function ProductsPage({ initialProductLines = productLines }: ProductsPag
 
                   {/* Product Info */}
                   <div className="p-4">
-                    <h3 className="font-['Open_Sans'] font-semibold text-[#001A33] text-sm leading-tight group-hover:text-[#D4AF37] transition-colors">
+                    <h3 className="font-['Open_Sans'] font-semibold text-[#001A33] text-sm leading-tight group-hover:text-[#e1ab42] transition-colors">
                       {product.name}
                     </h3>
-                    <span className="mt-3 text-xs font-['Open_Sans'] font-semibold text-[#D4AF37] group-hover:text-[#001A33] transition-colors block">
+                    <span className="mt-3 text-xs font-['Open_Sans'] font-semibold text-[#e1ab42] group-hover:text-[#001A33] transition-colors block">
                       Ver detalhes →
                     </span>
                   </div>

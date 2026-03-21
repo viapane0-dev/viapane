@@ -4,7 +4,6 @@ import { ProductCategoriesSection, ProductCategory } from "@/components/ProductC
 import { PodcastSection } from "@/components/PodcastSection";
 import { BlogSection, BlogCardProps } from "@/components/BlogSection";
 import { OfficesSection } from "@/components/OfficesSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
 import { getPayloadGlobal, getPayloadCollection, getImageUrl } from "@/lib/api";
 
 export default async function Home() {
@@ -89,7 +88,6 @@ export default async function Home() {
       <PodcastSection />
       <BlogSection posts={posts.length > 0 ? posts : undefined} />
       <OfficesSection />
-      <NewsletterSection />
     </main>
   );
 }

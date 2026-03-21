@@ -63,7 +63,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link
             href="/produtos"
-            className="flex items-center gap-2 text-[#001A33] hover:text-[#D4AF37] transition-colors font-['Open_Sans'] text-sm"
+            className="flex items-center gap-2 text-[#001A33] hover:text-[#e1ab42] transition-colors font-['Open_Sans'] text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para produtos
@@ -82,7 +82,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
             </h1>
 
             {/* Category Badge */}
-            <div className="inline-block bg-[#D4AF37] text-white px-4 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
+            <div className="inline-block bg-[#e1ab42] text-white px-4 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
               {categoryName}
             </div>
 
@@ -102,7 +102,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
                 <ul className="space-y-2 font-['Open_Sans'] text-gray-700">
                   {advantages.map((adv, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-[#D4AF37] mt-1">•</span>
+                      <span className="text-[#e1ab42] mt-1">•</span>
                       <span>{adv}</span>
                     </li>
                   ))}
@@ -164,8 +164,8 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
               ) : (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
                   <div className="text-center p-4">
-                    <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#D4AF37] bg-opacity-10 flex items-center justify-center">
-                      <svg className="w-10 h-10 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#e1ab42] bg-opacity-10 flex items-center justify-center">
+                      <svg className="w-10 h-10 text-[#e1ab42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -190,7 +190,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
               <ol className="space-y-4 font-['Open_Sans'] text-gray-700 leading-relaxed">
                 {preparation.map((step, idx) => (
                   <li key={idx} className="flex gap-4">
-                    <span className="font-bold text-[#D4AF37] flex-shrink-0">{idx + 1}.</span>
+                    <span className="font-bold text-[#e1ab42] flex-shrink-0">{idx + 1}.</span>
                     <span>{step}</span>
                   </li>
                 ))}
@@ -215,7 +215,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
 
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-[#D4AF37]">
+                  <tr className="border-b-2 border-[#e1ab42]">
                     <th className="text-left py-3 font-['Open_Sans'] font-semibold text-[#001A33]">
                       Informação Nutricional
                     </th>
@@ -262,7 +262,7 @@ export function ProductDetailPage({ product }: ProductDetailPageProps) {
           </p>
           <Link
             href="/contato"
-            className="inline-block bg-[#D4AF37] hover:bg-[#c29d2f] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl"
+            className="inline-block bg-[#e1ab42] hover:bg-[#c29d2f] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl"
           >
             Fale com nosso time
           </Link>
