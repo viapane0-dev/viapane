@@ -43,13 +43,13 @@ export default function AboutPage() {
             {/* Hero Section */}
             <div className="relative bg-gradient-to-br from-[#001A33] via-[#002a52] to-[#001A33] text-white py-32 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#e1ab42] rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-12">
-                        <div className="inline-block bg-[#D4AF37] text-white px-6 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
+                        <div className="inline-block bg-[#e1ab42] text-white px-6 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
                             20 anos de história
                         </div>
                         <h1 className="font-['Playfair_Display'] text-6xl md:text-7xl font-bold mb-8">
@@ -82,22 +82,22 @@ export default function AboutPage() {
 
                             <div className="grid grid-cols-3 gap-8 mt-12">
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-2">20+</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">20+</div>
                                     <div className="font-['Open_Sans'] text-sm text-gray-600">Anos de experiência</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-2">3</div>
-                                    <div className="font-['Open_Sans'] text-sm text-gray-600">Unidades no Brasil</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">+100 mil</div>
+                                    <div className="font-['Open_Sans'] text-sm text-gray-600">Clientes atendidos</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-2">72+</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">120+</div>
                                     <div className="font-['Open_Sans'] text-sm text-gray-600">Produtos premium</div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="relative">
-                            <div className="absolute -top-6 -left-6 w-full h-full bg-[#D4AF37] opacity-20 rounded-2xl"></div>
+                            <div className="absolute -top-6 -left-6 w-full h-full bg-[#e1ab42] opacity-20 rounded-2xl"></div>
                             <img
                                 src={aboutImage}
                                 alt="Panificação artesanal"
@@ -115,7 +115,7 @@ export default function AboutPage() {
                         {/* Missão */}
                         <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-shadow duration-300">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37] to-[#c29d2f] rounded-xl flex items-center justify-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[#e1ab42] to-[#c29d2f] rounded-xl flex items-center justify-center">
                                     <Target className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33]">
@@ -123,14 +123,14 @@ export default function AboutPage() {
                                 </h3>
                             </div>
                             <p className="font-['Open_Sans'] text-gray-700 leading-relaxed text-lg">
-                                Facilitar o dia a dia de quem vive da panificação e confeitaria, oferecendo soluções de alta qualidade que unem tradição, inovação e praticidade. Desenvolvemos pré-misturas e produtos com excelência técnica, cuidado artesanal e proximidade verdadeira com nossos clientes, transformando trabalho em sabor, rotina em realização e ingredientes em histórias que nutrem pessoas e negócios.
+                                Facilitamos o dia a dia de quem vive da panificação e confeitaria, com soluções de alta qualidade que equilibram tradição e inovação na medida certa. Desenvolvemos pré-misturas e produtos com excelência técnica, olhar artesanal e proximidade genuína com nossos clientes. Transformamos processos em praticidade, rotina em realização e ingredientes em experiências que nutrem pessoas, impulsionam negócios e constroem histórias com sabor.
                             </p>
                         </div>
 
                         {/* Visão */}
                         <div className="bg-gradient-to-br from-[#001A33] to-[#002a52] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-shadow duration-300 text-white">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-[#D4AF37] rounded-xl flex items-center justify-center">
+                                <div className="w-16 h-16 bg-[#e1ab42] rounded-xl flex items-center justify-center">
                                     <Eye className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="font-['Playfair_Display'] text-3xl font-bold">
@@ -138,7 +138,7 @@ export default function AboutPage() {
                                 </h3>
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200 leading-relaxed text-lg">
-                                Ser reconhecida como a principal parceira do setor de panificação e confeitaria no Brasil, referência em inovação, qualidade e atendimento próximo. Queremos contribuir para o crescimento sustentável dos nossos clientes e valorizar o ofício artesanal, inspirando novas gerações a transformar ingredientes em sonhos.
+                                Ser reconhecida como a principal parceira do setor de panificação e confeitaria no Brasil, referência em inovação, qualidade e atendimento. Acreditamos que o nosso crescimento só faz sentido quando crescemos juntos. Por isso, desenvolvemos caminhos sustentáveis, práticos e inteligentes, sem perder a essência do artesanal. Honramos o passado, aceleramos o presente e inspiramos o futuro. Porque, no fim, não se trata só de misturas, mas de transformar as ideias em sonhos.
                             </p>
                         </div>
                     </div>
@@ -163,9 +163,9 @@ export default function AboutPage() {
                             return (
                                 <div
                                     key={index}
-                                    className="bg-[#F9F7F2] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-[#D4AF37]"
+                                    className="bg-[#F9F7F2] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-[#e1ab42]"
                                 >
-                                    <div className="w-14 h-14 bg-gradient-to-br from-[#D4AF37] to-[#c29d2f] rounded-xl flex items-center justify-center mb-6">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-[#e1ab42] to-[#c29d2f] rounded-xl flex items-center justify-center mb-6">
                                         <Icon className="w-7 h-7 text-white" />
                                     </div>
                                     <h4 className="font-['Playfair_Display'] text-xl font-bold text-[#001A33] mb-3">
@@ -184,8 +184,8 @@ export default function AboutPage() {
             {/* Compromisso Section */}
             <div className="py-20 bg-gradient-to-br from-[#001A33] to-[#002a52] text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl"></div>
+                    <div className="absolute top-0 left-0 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
@@ -198,7 +198,7 @@ export default function AboutPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
                                 Tradição
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -207,7 +207,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
                                 Inovação
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -216,7 +216,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D4AF37] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
                                 Parceria
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -239,7 +239,7 @@ export default function AboutPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/produtos"
-                            className="bg-[#D4AF37] hover:bg-[#c29d2f] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl inline-block"
+                            className="bg-[#e1ab42] hover:bg-[#c29d2f] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl inline-block"
                         >
                             Conheça nossos produtos
                         </Link>
