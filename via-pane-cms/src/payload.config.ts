@@ -18,10 +18,13 @@ import { Home } from './globals/Home'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const cmsURL = process.env.NEXT_PUBLIC_CMS_URL || process.env.URL || 'http://localhost:3001'
+const appURL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_CMS_URL || 'http://localhost:3001',
-  cors: [process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000', 'http://localhost:3001'],
-  csrf: [process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000', 'http://localhost:3001'],
+  serverURL: cmsURL,
+  cors: [appURL, cmsURL, 'http://localhost:3000', 'http://localhost:3001'],
+  csrf: [appURL, cmsURL, 'http://localhost:3000', 'http://localhost:3001'],
   routes: {
     admin: '/admin',
   },
