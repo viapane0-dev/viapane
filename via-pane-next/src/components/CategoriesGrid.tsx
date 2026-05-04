@@ -55,7 +55,7 @@ export function CategoriesGrid() {
   ];
 
   return (
-    <section className="bg-[#F9F7F2] py-20">
+    <section className="bg-transparent py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category, index) => (

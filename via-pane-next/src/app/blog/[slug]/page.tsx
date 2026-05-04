@@ -24,10 +24,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
     if (!post) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-[#F9F7F2]">
+            <div className="min-h-screen flex items-center justify-center bg-transparent">
                 <div className="text-center">
                     <p className="font-['Open_Sans'] text-xl mb-4">Artigo não encontrado.</p>
-                    <Link href="/blog" className="text-[#e1ab42] hover:underline font-semibold">
+                    <Link href="/blog" className="text-[#D3AF37] hover:underline font-semibold">
                         Voltar para o Blog
                     </Link>
                 </div>
@@ -54,13 +54,13 @@ export default async function BlogPostPage({ params }: PageProps) {
     const categoryName = typeof post.category === 'object' ? post.category.name : 'Geral';
 
     return (
-        <div className="min-h-screen bg-[#F9F7F2]">
+        <div className="min-h-screen bg-transparent">
             {/* Navigation Bar */}
             <div className="bg-white border-b border-gray-200 sticky top-0 z-20">
                 <div className="max-w-4xl mx-auto px-6 py-4">
                     <Link
                         href="/blog"
-                        className="flex items-center gap-2 text-[#001A33] hover:text-[#e1ab42] transition-colors font-['Open_Sans'] text-sm"
+                        className="flex items-center gap-2 text-[#001A33] hover:text-[#D3AF37] transition-colors font-['Open_Sans'] text-sm"
                     >
                         <ArrowLeft className="w-4 h-4" />
                         Voltar para o Blog
@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <article className="max-w-4xl mx-auto px-6 py-12">
                 {/* Header */}
                 <header className="mb-12 text-center">
-                    <div className="inline-block bg-[#e1ab42] text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                    <div className="inline-block bg-[#D3AF37] text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
                         {categoryName}
                     </div>
                     <h1 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-[#001A33] leading-tight mb-8">
@@ -80,15 +80,15 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                     <div className="flex flex-wrap items-center justify-center gap-6 text-gray-500 font-['Open_Sans'] text-sm">
                         <div className="flex items-center gap-2">
-                            <User className="w-4 h-4 text-[#e1ab42]" />
+                            <User className="w-4 h-4 text-[#D3AF37]" />
                             <span>{authorName}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4 text-[#e1ab42]" />
+                            <Calendar className="w-4 h-4 text-[#D3AF37]" />
                             <span>{formatDate(post.publishedDate || post.createdAt)}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-[#e1ab42]" />
+                            <Clock className="w-4 h-4 text-[#D3AF37]" />
                             <span>{post.readTime || '5 min'}</span>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {/* Content */}
                 <div className="prose prose-lg max-w-none font-['Open_Sans'] text-gray-700
                     prose-headings:font-['Playfair_Display'] prose-headings:text-[#001A33]
-                    prose-a:text-[#e1ab42] prose-a:no-underline hover:prose-a:underline
+                    prose-a:text-[#D3AF37] prose-a:no-underline hover:prose-a:underline
                     prose-img:rounded-xl">
 
                     {/* Render content based on structure */}

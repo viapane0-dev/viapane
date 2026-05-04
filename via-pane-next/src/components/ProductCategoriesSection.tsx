@@ -103,7 +103,7 @@ export function ProductCategoriesSection({ categories: propCategories }: Product
   };
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-transparent py-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -145,7 +145,7 @@ export function ProductCategoriesSection({ categories: propCategories }: Product
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   </div>
-                  <h3 className="font-['Open_Sans'] text-sm font-semibold text-[#001A33] text-center group-hover:text-[#e1ab42] transition-colors">
+                  <h3 className="font-['Open_Sans'] text-sm font-semibold text-[#001A33] text-center group-hover:text-[#D3AF37] transition-colors">
                     {category.title}
                   </h3>
                 </Link>

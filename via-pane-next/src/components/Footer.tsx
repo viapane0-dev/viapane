@@ -37,7 +37,7 @@ export function Footer() {
             <h4 className="font-['Playfair_Display'] text-2xl font-bold mb-6">Contatos</h4>
             <div className="space-y-4 font-['Open_Sans'] flex flex-col items-center md:items-start">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
-                <Phone size={20} className="text-[#e1ab42] flex-shrink-0 mt-1" />
+                <Phone size={20} className="text-[#D3AF37] flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">Matriz São Paulo</p>
                   <p className="text-gray-300 text-sm">(11) 4426-2896</p>
@@ -45,15 +45,7 @@ export function Footer() {
                   <p className="text-gray-300 text-sm">(11) 4352-1984</p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full pt-4 md:pt-0">
-                <Mail size={20} className="text-[#e1ab42] flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-semibold mb-1">E-mail</p>
-                  <a href="mailto:mkt@viapane.com.br" className="text-gray-300 hover:text-[#e1ab42] transition-colors">
-                    mkt@viapane.com.br
-                  </a>
-                </div>
-              </div>
+
             </div>
           </div>
 
@@ -63,31 +55,31 @@ export function Footer() {
             <nav className="space-y-3 font-['Open_Sans'] mb-8 flex flex-col items-center">
               <Link
                 href="/"
-                className="block hover:text-[#e1ab42] transition-colors w-full"
+                className="block hover:text-[#D3AF37] transition-colors w-full"
               >
                 Home
               </Link>
               <Link
                 href="/produtos"
-                className="block hover:text-[#e1ab42] transition-colors w-full"
+                className="block hover:text-[#D3AF37] transition-colors w-full"
               >
                 Produtos
               </Link>
               <Link
                 href="/sobre"
-                className="block hover:text-[#e1ab42] transition-colors w-full"
+                className="block hover:text-[#D3AF37] transition-colors w-full"
               >
                 Sobre nós
               </Link>
               <Link
                 href="/blog"
-                className="block hover:text-[#e1ab42] transition-colors w-full"
+                className="block hover:text-[#D3AF37] transition-colors w-full"
               >
                 Blog
               </Link>
               <Link
                 href="/contato"
-                className="block hover:text-[#e1ab42] transition-colors w-full"
+                className="block hover:text-[#D3AF37] transition-colors w-full"
               >
                 Contato
               </Link>
@@ -99,7 +91,7 @@ export function Footer() {
                 href="https://www.youtube.com/@Viapanebrasil/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#e1ab42] hover:bg-[#c29d2f] p-3 rounded-full transition-colors"
+                className="bg-[#D3AF37] hover:bg-[#B89A2E] p-3 rounded-full transition-colors"
                 aria-label="YouTube Via Pane"
               >
                 <Youtube size={20} />
@@ -108,7 +100,7 @@ export function Footer() {
                 href="https://www.instagram.com/via__pane/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#e1ab42] hover:bg-[#c29d2f] p-3 rounded-full transition-colors"
+                className="bg-[#D3AF37] hover:bg-[#B89A2E] p-3 rounded-full transition-colors"
                 aria-label="Instagram Via Pane"
               >
                 <Instagram size={20} />
@@ -117,7 +109,7 @@ export function Footer() {
                 href="https://www.tiktok.com/@via__pane"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#e1ab42] hover:bg-[#c29d2f] p-3 rounded-full transition-colors"
+                className="bg-[#D3AF37] hover:bg-[#B89A2E] p-3 rounded-full transition-colors"
                 aria-label="TikTok Via Pane"
               >
                 <TikTokIcon />
@@ -126,7 +118,7 @@ export function Footer() {
                 href="https://wa.me/5511913390164"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#e1ab42] hover:bg-[#c29d2f] p-3 rounded-full transition-colors"
+                className="bg-[#D3AF37] hover:bg-[#B89A2E] p-3 rounded-full transition-colors"
                 aria-label="WhatsApp Via Pane"
               >
                 <WhatsAppIcon />
@@ -139,7 +131,7 @@ export function Footer() {
             <h4 className="font-['Playfair_Display'] text-2xl font-bold mb-6">Endereços</h4>
             <div className="space-y-6 font-['Open_Sans'] flex flex-col items-center md:items-start">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
-                <MapPin size={20} className="text-[#e1ab42] flex-shrink-0 mt-1" />
+                <MapPin size={20} className="text-[#D3AF37] flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">Matriz - Santo André/SP</p>
                   <p className="text-gray-300 text-sm">
@@ -149,14 +141,14 @@ export function Footer() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 w-full">
-                <MapPin size={20} className="text-[#e1ab42] flex-shrink-0 mt-1" />
+                <MapPin size={20} className="text-[#D3AF37] flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Sede Recife</p>
+                  <p className="font-semibold mb-1">Filial Pernambuco</p>
                   <p className="text-gray-300 text-sm">
                     Rod BR 101 Sul, 34318<br />
-                    Cabo de Santo Agostinho - PE
+                    GP 04 D BL 07, Dist. Ind. Diper<br />
+                    Cabo de Santo Agostinho - PE, 54510-000
                   </p>
-                  <p className="text-sm text-gray-400">CEP: 51021-020</p>
                 </div>
               </div>
             </div>

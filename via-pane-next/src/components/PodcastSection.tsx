@@ -7,8 +7,8 @@ export function PodcastSection() {
     <section className="bg-gradient-to-br from-[#001A33] via-[#002a52] to-[#001A33] py-20 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-[#e1ab42] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#e1ab42] rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#D3AF37] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#D3AF37] rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -16,7 +16,7 @@ export function PodcastSection() {
           {/* Left Side - Podcast Info */}
           <div className="text-white">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Mic2 className="w-5 h-5 text-[#e1ab42]" />
+              <Mic2 className="w-5 h-5 text-[#D3AF37]" />
               <span className="font-['Open_Sans'] font-semibold text-sm">Podcast Via Pane</span>
             </div>
 
@@ -72,7 +72,7 @@ export function PodcastSection() {
                 href="https://www.instagram.com/paocast.vp/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 hover:bg-[#e1ab42] backdrop-blur-sm p-3 rounded-full transition-all duration-300 hover:scale-110"
+                className="bg-white/20 hover:bg-[#D3AF37] backdrop-blur-sm p-3 rounded-full transition-all duration-300 hover:scale-110"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -81,7 +81,7 @@ export function PodcastSection() {
 
           {/* Right Side - Podcast Cover */}
           <div className="relative max-w-md mx-auto lg:mx-0">
-            <div className="absolute -inset-4 bg-[#e1ab42] rounded-3xl blur-2xl opacity-30"></div>
+            <div className="absolute -inset-4 bg-[#D3AF37] rounded-3xl blur-2xl opacity-30"></div>
             <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 border-2 border-white/20">
               <img
                 src={paocastLogo}
@@ -91,7 +91,7 @@ export function PodcastSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#e1ab42] rounded-full opacity-20 blur-xl"></div>
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#D3AF37] rounded-full opacity-20 blur-xl"></div>
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-white rounded-full opacity-10 blur-xl"></div>
           </div>
         </div>

@@ -127,9 +127,20 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
+}
 
+/* Body texture - outside @layer to avoid being overridden by Tailwind utilities */
+body {
+  background-color: #F9F7F2 !important;
+  background-image: url('/assets/body-texture.png') !important;
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  background-blend-mode: multiply;
+}
+
+@layer base {
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.

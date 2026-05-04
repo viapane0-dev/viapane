@@ -39,18 +39,18 @@ export default function AboutPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#F9F7F2]">
+        <div className="min-h-screen bg-transparent">
             {/* Hero Section */}
             <div className="relative bg-gradient-to-br from-[#001A33] via-[#002a52] to-[#001A33] text-white py-32 overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#e1ab42] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#D3AF37] rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D3AF37] rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-12">
-                        <div className="inline-block bg-[#e1ab42] text-white px-6 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
-                            20 anos de história
+                        <div className="inline-block bg-[#D3AF37] text-white px-6 py-2 rounded-full font-['Open_Sans'] font-semibold text-sm mb-6">
+                            22 anos de história
                         </div>
                         <h1 className="font-['Playfair_Display'] text-6xl md:text-7xl font-bold mb-8">
                             Sobre Nós
@@ -58,13 +58,13 @@ export default function AboutPage() {
                     </div>
 
                     <p className="font-['Open_Sans'] text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto text-center">
-                        Com 20 anos de história, a Via Pane é mais que uma indústria de pré-misturas para panificação e confeitaria, somos parceiros dedicados de quem transforma farinha em alimento e afeto.
+                        Com 22 anos de história, a Via Pane é mais que uma indústria de pré-misturas para panificação e confeitaria, somos parceiros dedicados de quem transforma farinha em alimento e afeto.
                     </p>
                 </div>
             </div>
 
             {/* Nossa História */}
-            <div className="py-20 bg-white">
+            <div className="py-20 bg-transparent">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
@@ -73,31 +73,37 @@ export default function AboutPage() {
                             </h2>
                             <div className="space-y-6 font-['Open_Sans'] text-lg text-gray-700 leading-relaxed">
                                 <p>
-                                    Nascemos do respeito pela tradição artesanal, mas com o olhar sempre voltado para a inovação. Nosso compromisso é oferecer produtos que unem qualidade, praticidade e cuidado, acompanhando de perto as necessidades de padarias, supermercados, indústrias e pequenos negócios em todo o Brasil.
+                                    A Via Pane nasceu há 22 anos dentro de uma garagem, movida por um propósito simples e poderoso: fazer bem feito.
                                 </p>
                                 <p>
-                                    Acreditamos que, junto com nossos clientes, fermentamos sonhos e construímos histórias que chegam à mesa das famílias brasileiras todos os dias.
+                                    Começamos com o pão de queijo, refletindo a essência de um negócio familiar fundado por José Iatagam, que sempre respeitou a tradição como quem respeita a própria origem.
+                                </p>
+                                <p>
+                                    O brioche surgiu a partir de uma viagem a Paris; a ciabatta, de uma experiência na Itália; e o semi-italiano nasceu de inspirações vividas pela Europa. Com o tempo, esses produtos, junto com a tapioca, conquistaram o paladar dos brasileiros e se tornaram verdadeiros queridinhos.
+                                </p>
+                                <p>
+                                    Hoje, a Via Pane é parceira de padarias, supermercados, indústrias e pequenos negócios em todo o Brasil. Entregamos soluções que equilibram qualidade, padronização e praticidade, porque sabemos que consistência não é detalhe: é resultado.
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-3 gap-8 mt-12">
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">20+</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-2">22+</div>
                                     <div className="font-['Open_Sans'] text-sm text-gray-600">Anos de experiência</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">+100 mil</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-2">+100 mil</div>
                                     <div className="font-['Open_Sans'] text-sm text-gray-600">Clientes atendidos</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-2">120+</div>
+                                    <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-2">120+</div>
                                     <div className="font-['Open_Sans'] text-sm text-gray-600">Produtos premium</div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="relative">
-                            <div className="absolute -top-6 -left-6 w-full h-full bg-[#e1ab42] opacity-20 rounded-2xl"></div>
+                            <div className="absolute -top-6 -left-6 w-full h-full bg-[#D3AF37] opacity-20 rounded-2xl"></div>
                             <img
                                 src={aboutImage}
                                 alt="Panificação artesanal"
@@ -108,14 +114,35 @@ export default function AboutPage() {
                 </div>
             </div>
 
+            {/* Nosso Propósito */}
+            <div className="py-24 bg-white/40">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <div className="w-16 h-1 bg-[#D3AF37] mx-auto mb-10 rounded-full"></div>
+                    <div className="space-y-8 font-['Open_Sans'] text-xl md:text-2xl text-gray-800 leading-relaxed">
+                        <p>
+                            Nossa equipe técnica percorre o país ao lado de nossos clientes, ajustando processos, elevando padrões e garantindo confiança em cada fornada.
+                        </p>
+                        <p>
+                            Este ano demos um passo além: produzimos nossos produtos na Europa, em Portugal, durante a Tecnipão, reafirmando nossa visão de futuro.
+                        </p>
+                        <p className="font-['Playfair_Display'] italic text-2xl md:text-3xl text-[#001A33]">
+                            Para nós, panificação é mais do que técnica. É conexão. É o elo entre quem produz e quem leva alimento à mesa.
+                        </p>
+                        <p>
+                            Junto com nossos clientes, fermentamos sonhos e construímos histórias que chegam às mesas das famílias brasileiras com sabor, propósito e consistência.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* Missão e Visão */}
-            <div className="py-20 bg-[#F9F7F2]">
+            <div className="py-20 bg-transparent">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Missão */}
                         <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-shadow duration-300">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-[#e1ab42] to-[#c29d2f] rounded-xl flex items-center justify-center">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[#D3AF37] to-[#B89A2E] rounded-xl flex items-center justify-center">
                                     <Target className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33]">
@@ -130,7 +157,7 @@ export default function AboutPage() {
                         {/* Visão */}
                         <div className="bg-gradient-to-br from-[#001A33] to-[#002a52] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-shadow duration-300 text-white">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-[#e1ab42] rounded-xl flex items-center justify-center">
+                                <div className="w-16 h-16 bg-[#D3AF37] rounded-xl flex items-center justify-center">
                                     <Eye className="w-8 h-8 text-white" />
                                 </div>
                                 <h3 className="font-['Playfair_Display'] text-3xl font-bold">
@@ -146,7 +173,7 @@ export default function AboutPage() {
             </div>
 
             {/* Valores */}
-            <div className="py-20 bg-white">
+            <div className="py-20 bg-transparent">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="font-['Playfair_Display'] text-5xl font-bold text-[#001A33] mb-4">
@@ -163,9 +190,9 @@ export default function AboutPage() {
                             return (
                                 <div
                                     key={index}
-                                    className="bg-[#F9F7F2] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-[#e1ab42]"
+                                    className="bg-transparent rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-[#D3AF37]"
                                 >
-                                    <div className="w-14 h-14 bg-gradient-to-br from-[#e1ab42] to-[#c29d2f] rounded-xl flex items-center justify-center mb-6">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-[#D3AF37] to-[#B89A2E] rounded-xl flex items-center justify-center mb-6">
                                         <Icon className="w-7 h-7 text-white" />
                                     </div>
                                     <h4 className="font-['Playfair_Display'] text-xl font-bold text-[#001A33] mb-3">
@@ -184,8 +211,8 @@ export default function AboutPage() {
             {/* Compromisso Section */}
             <div className="py-20 bg-gradient-to-br from-[#001A33] to-[#002a52] text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e1ab42] rounded-full blur-3xl"></div>
+                    <div className="absolute top-0 left-0 w-96 h-96 bg-[#D3AF37] rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D3AF37] rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
@@ -198,7 +225,7 @@ export default function AboutPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-3">
                                 Tradição
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -207,7 +234,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-3">
                                 Inovação
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -216,7 +243,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#e1ab42] mb-3">
+                            <div className="font-['Playfair_Display'] text-4xl font-bold text-[#D3AF37] mb-3">
                                 Parceria
                             </div>
                             <p className="font-['Open_Sans'] text-gray-200">
@@ -228,7 +255,7 @@ export default function AboutPage() {
             </div>
 
             {/* CTA Final */}
-            <div className="py-20 bg-white">
+            <div className="py-20 bg-transparent">
                 <div className="max-w-5xl mx-auto px-6 text-center">
                     <h2 className="font-['Playfair_Display'] text-5xl font-bold text-[#001A33] mb-6">
                         Vamos crescer juntos?
@@ -239,7 +266,7 @@ export default function AboutPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/produtos"
-                            className="bg-[#e1ab42] hover:bg-[#c29d2f] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl inline-block"
+                            className="bg-[#D3AF37] hover:bg-[#B89A2E] text-white px-10 py-4 rounded-xl font-['Open_Sans'] font-semibold text-lg transition-all duration-300 hover:shadow-xl inline-block"
                         >
                             Conheça nossos produtos
                         </Link>

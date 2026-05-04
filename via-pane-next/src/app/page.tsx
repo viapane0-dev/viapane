@@ -47,12 +47,41 @@ export default async function Home() {
     };
   });
 
-  // Fetch Product Categories
-  const categoriesRes = await getPayloadCollection('product-categories', { limit: 100 });
+  // Fetch Product Categories with depth=1 to get parent info
+  const categoriesRes = await getPayloadCollection('product-categories', { limit: 100, depth: 1 });
 
-  // Filter out parent categories (Panificação: 5, Confeitaria: 6, Ingredientes: 7)
-  const EXCLUDED_IDS = [5, 6, 7];
-  const subCategories = (categoriesRes.docs || []).filter((cat: any) => !EXCLUDED_IDS.includes(cat.id));
+  // Build root category type map and define display order
+  const rootCategoryTypeMap = new Map<number | string, string>();
+  const categoryOrder: Record<string, number> = {
+    panificacao: 0,
+    confeitaria: 1,
+    ingredientes: 2,
+  };
+
+  (categoriesRes.docs || []).forEach((cat: any) => {
+    if (!cat.parent) {
+      const lowerName = (cat.name || '').toLowerCase();
+      if (lowerName.includes('confeitaria')) {
+        rootCategoryTypeMap.set(cat.id, 'confeitaria');
+      } else if (lowerName.includes('ingrediente') || lowerName.includes('insumos')) {
+        rootCategoryTypeMap.set(cat.id, 'ingredientes');
+      } else {
+        rootCategoryTypeMap.set(cat.id, 'panificacao');
+      }
+    }
+  });
+
+  // Filter out parent/root categories — keep only subcategories
+  const subCategories = (categoriesRes.docs || []).filter((cat: any) => !!cat.parent);
+
+  // Sort subcategories by their parent's category order
+  subCategories.sort((a: any, b: any) => {
+    const parentIdA = typeof a.parent === 'object' ? a.parent?.id : a.parent;
+    const parentIdB = typeof b.parent === 'object' ? b.parent?.id : b.parent;
+    const orderA = categoryOrder[rootCategoryTypeMap.get(parentIdA) || 'panificacao'] ?? 99;
+    const orderB = categoryOrder[rootCategoryTypeMap.get(parentIdB) || 'panificacao'] ?? 99;
+    return orderA - orderB;
+  });
 
   // Fetch images for each subcategory
   const categories: ProductCategory[] = await Promise.all(subCategories.map(async (cat: any) => {
@@ -81,7 +110,7 @@ export default async function Home() {
 
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-transparent">
       <HeroSection {...heroProps} />
       <CategoriesGrid />
       <ProductCategoriesSection categories={categories.length > 0 ? categories : undefined} />

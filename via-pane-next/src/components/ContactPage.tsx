@@ -26,14 +26,14 @@ const offices: Office[] = [
     phones: ['(11) 4426-2896', '(11) 3458-6027', '(11) 4352-1984']
   },
   {
-    id: 'recife',
-    name: 'Sede ou Filial Recife',
+    id: 'filial-pe',
+    name: 'Filial Pernambuco',
     company: 'VIA PANE IND. COM. PROD. ALIM. LTDA',
     address: 'Rod BR 101 Sul, 34318, GP 04 D BL 07, Dist. Ind. Diper',
     city: 'Cabo de Santo Agostinho',
     state: 'PE',
     zip: '54510-000',
-    phones: ['(81) 99857-0020']
+    phones: []
   }
 ];
 
@@ -108,7 +108,7 @@ export function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F7F2]">
+    <div className="min-h-screen bg-transparent">
       {/* Hero Header */}
       <div className="bg-[#001A33] text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -116,7 +116,7 @@ export function ContactPage() {
             Fale Conosco
           </h1>
           <p className="font-['Open_Sans'] text-lg text-gray-300 max-w-2xl">
-            Entre em contato com nossa equipe. Estamos prontos para atendê-lo em nossas três unidades.
+            Entre em contato com nossa equipe. Estamos prontos para atendê-lo.
           </p>
         </div>
       </div>
@@ -131,8 +131,8 @@ export function ContactPage() {
                 type="button"
                 onClick={() => setActiveTab('comercial')}
                 className={`pb-4 mr-8 font-['Open_Sans'] font-semibold text-lg transition-colors border-b-2 ${activeTab === 'comercial'
-                  ? 'border-[#e1ab42] text-[#001A33]'
-                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#e1ab42]'
+                  ? 'border-[#D3AF37] text-[#001A33]'
+                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#D3AF37]'
                   }`}
               >
                 Contato Comercial
@@ -141,8 +141,8 @@ export function ContactPage() {
                 type="button"
                 onClick={() => setActiveTab('trabalhe-conosco')}
                 className={`pb-4 font-['Open_Sans'] font-semibold text-lg transition-colors border-b-2 ${activeTab === 'trabalhe-conosco'
-                  ? 'border-[#e1ab42] text-[#001A33]'
-                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#e1ab42]'
+                  ? 'border-[#D3AF37] text-[#001A33]'
+                  : 'border-transparent text-gray-400 hover:text-gray-600 hover:border-[#D3AF37]'
                   }`}
               >
                 Trabalhe Conosco
@@ -169,7 +169,7 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                       placeholder="Seu nome"
                     />
                   </div>
@@ -185,7 +185,7 @@ export function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                         placeholder="seu@email.com"
                       />
                     </div>
@@ -200,7 +200,7 @@ export function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                         placeholder="(00) 00000-0000"
                       />
                     </div>
@@ -215,7 +215,7 @@ export function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                       placeholder="Nome da empresa"
                     />
                   </div>
@@ -229,7 +229,7 @@ export function ContactPage() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                     >
                       <option value="">Selecione um assunto</option>
                       <option value="comercial">Comercial / Vendas</option>
@@ -250,14 +250,14 @@ export function ContactPage() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans'] resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans'] resize-none"
                       placeholder="Digite sua mensagem aqui..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#e1ab42] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2"
                   >
                     <Send size={20} />
                     Enviar mensagem
@@ -265,7 +265,7 @@ export function ContactPage() {
 
                   <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
                     Ou envie um e-mail direto para:{' '}
-                    <a href="mailto:mkt@viapane.com.br" className="text-[#e1ab42] hover:underline font-semibold">
+                    <a href="mailto:mkt@viapane.com.br" className="text-[#D3AF37] hover:underline font-semibold">
                       mkt@viapane.com.br
                     </a>
                   </p>
@@ -291,7 +291,7 @@ export function ContactPage() {
                       value={workFormData.name}
                       onChange={handleWorkChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                       placeholder="Seu nome"
                     />
                   </div>
@@ -307,7 +307,7 @@ export function ContactPage() {
                         value={workFormData.email}
                         onChange={handleWorkChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                         placeholder="seu@email.com"
                       />
                     </div>
@@ -322,7 +322,7 @@ export function ContactPage() {
                         value={workFormData.phone}
                         onChange={handleWorkChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                         placeholder="(00) 00000-0000"
                       />
                     </div>
@@ -337,7 +337,7 @@ export function ContactPage() {
                       name="linkedin"
                       value={workFormData.linkedin}
                       onChange={handleWorkChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans']"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans']"
                       placeholder="https://linkedin.com/in/seu-perfil"
                     />
                   </div>
@@ -352,7 +352,7 @@ export function ContactPage() {
                       onChange={handleWorkChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#e1ab42] font-['Open_Sans'] resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D3AF37] font-['Open_Sans'] resize-none"
                       placeholder="Conte-nos um pouco sobre sua experiência e área de interesse..."
                     />
                   </div>
@@ -373,9 +373,9 @@ export function ContactPage() {
                       />
                       <label
                         htmlFor="resume"
-                        className="flex items-center justify-center flex-col md:flex-row gap-3 w-full px-4 py-8 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-[#e1ab42] hover:bg-[#F9F7F2] transition-colors"
+                        className="flex items-center justify-center flex-col md:flex-row gap-3 w-full px-4 py-8 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-[#D3AF37] hover:bg-transparent transition-colors"
                       >
-                        <Paperclip size={24} className={resumeFile ? "text-[#e1ab42]" : "text-gray-400"} />
+                        <Paperclip size={24} className={resumeFile ? "text-[#D3AF37]" : "text-gray-400"} />
                         <span className={resumeFile ? "text-[#001A33] font-medium text-center" : "text-gray-500 text-center"}>
                           {resumeFile ? resumeFile.name : "Clique para selecionar o arquivo do currículo"}
                         </span>
@@ -385,7 +385,7 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#e1ab42] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#c49d2f] transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2"
                   >
                     <Send size={20} />
                     Enviar currículo
@@ -393,7 +393,7 @@ export function ContactPage() {
 
                   <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
                     Ou envie diretamente para:{' '}
-                    <a href="mailto:rh@viapane.com.br" className="text-[#e1ab42] hover:underline font-semibold">
+                    <a href="mailto:rh@viapane.com.br" className="text-[#D3AF37] hover:underline font-semibold">
                       rh@viapane.com.br
                     </a>
                   </p>
@@ -405,22 +405,19 @@ export function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="font-['Playfair_Display'] text-3xl font-bold text-[#001A33] mb-6">
-                Nossas Unidades
-              </h2>
 
               {offices.map((office, index) => (
                 <div
                   key={office.id}
                   className={`${index !== offices.length - 1 ? 'pb-6 mb-6 border-b border-gray-200' : ''}`}
                 >
-                  <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#e1ab42] mb-3">
+                  <h3 className="font-['Playfair_Display'] text-xl font-bold text-[#D3AF37] mb-3">
                     {office.name}
                   </h3>
 
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <MapPin className="w-5 h-5 text-[#e1ab42] flex-shrink-0 mt-1" />
+                      <MapPin className="w-5 h-5 text-[#D3AF37] flex-shrink-0 mt-1" />
                       <div>
                         <p className="font-['Open_Sans'] text-sm text-gray-600 leading-relaxed">
                           {office.company}
@@ -435,13 +432,13 @@ export function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Phone className="w-5 h-5 text-[#e1ab42] flex-shrink-0 mt-1" />
+                      <Phone className="w-5 h-5 text-[#D3AF37] flex-shrink-0 mt-1" />
                       <div>
                         {office.phones.map((phone, idx) => (
                           <a
                             key={idx}
                             href={`tel:${phone.replace(/\D/g, '')}`}
-                            className="font-['Open_Sans'] text-sm text-gray-800 hover:text-[#e1ab42] transition-colors block"
+                            className="font-['Open_Sans'] text-sm text-gray-800 hover:text-[#D3AF37] transition-colors block"
                           >
                             {phone}
                           </a>
@@ -453,25 +450,7 @@ export function ContactPage() {
               ))}
             </div>
 
-            {/* Email Contact Card */}
-            <div className="bg-gradient-to-br from-[#001A33] to-[#002a52] rounded-2xl p-8 shadow-lg text-white">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#e1ab42] rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-['Playfair_Display'] text-xl font-bold">
-                    E-mail Comercial
-                  </h3>
-                </div>
-              </div>
-              <a
-                href="mailto:mkt@viapane.com.br"
-                className="font-['Open_Sans'] text-lg text-[#e1ab42] hover:text-white transition-colors"
-              >
-                mkt@viapane.com.br
-              </a>
-            </div>
+
 
             {/* Business Hours */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
