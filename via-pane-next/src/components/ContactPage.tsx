@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send, Paperclip } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Paperclip, Loader2, CheckCircle, XCircle } from 'lucide-react';
 import { useState } from 'react';
 
 interface Office {
@@ -37,6 +37,8 @@ const offices: Office[] = [
   }
 ];
 
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
 export function ContactPage() {
   const [activeTab, setActiveTab] = useState<'comercial' | 'trabalhe-conosco'>('comercial');
 
@@ -58,33 +60,73 @@ export function ContactPage() {
   });
   const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [contactStatus, setContactStatus] = useState<FormStatus>('idle');
+  const [workStatus, setWorkStatus] = useState<FormStatus>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+  const [workStatusMessage, setWorkStatusMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode integrar com um serviço de email
-    console.log('Form submitted:', formData);
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      subject: '',
-      message: ''
-    });
+    setContactStatus('loading');
+    setStatusMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setContactStatus('success');
+        setStatusMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+        setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
+      } else {
+        const data = await res.json();
+        setContactStatus('error');
+        setStatusMessage(data.error || 'Erro ao enviar mensagem. Tente novamente.');
+      }
+    } catch {
+      setContactStatus('error');
+      setStatusMessage('Erro de conexão. Verifique sua internet e tente novamente.');
+    }
   };
 
-  const handleWorkSubmit = (e: React.FormEvent) => {
+  const handleWorkSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Work Form submitted:', workFormData, resumeFile);
-    alert('Mensagem e currículo enviados com sucesso! Entraremos em contato em breve.');
-    setWorkFormData({
-      name: '',
-      email: '',
-      phone: '',
-      linkedin: '',
-      message: ''
-    });
-    setResumeFile(null);
+    setWorkStatus('loading');
+    setWorkStatusMessage('');
+
+    try {
+      const data = new FormData();
+      data.append('name', workFormData.name);
+      data.append('email', workFormData.email);
+      data.append('phone', workFormData.phone);
+      data.append('linkedin', workFormData.linkedin);
+      data.append('message', workFormData.message);
+      if (resumeFile) {
+        data.append('resume', resumeFile);
+      }
+
+      const res = await fetch('/api/work-with-us', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (res.ok) {
+        setWorkStatus('success');
+        setWorkStatusMessage('Candidatura enviada com sucesso! Entraremos em contato em breve.');
+        setWorkFormData({ name: '', email: '', phone: '', linkedin: '', message: '' });
+        setResumeFile(null);
+      } else {
+        const resData = await res.json();
+        setWorkStatus('error');
+        setWorkStatusMessage(resData.error || 'Erro ao enviar candidatura. Tente novamente.');
+      }
+    } catch {
+      setWorkStatus('error');
+      setWorkStatusMessage('Erro de conexão. Verifique sua internet e tente novamente.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -257,11 +299,24 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2"
+                    disabled={contactStatus === 'loading'}
+                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <Send size={20} />
-                    Enviar mensagem
+                    {contactStatus === 'loading' ? (
+                      <><Loader2 size={20} className="animate-spin" /> Enviando...</>
+                    ) : (
+                      <><Send size={20} /> Enviar mensagem</>
+                    )}
                   </button>
+
+                  {statusMessage && (
+                    <div className={`flex items-center gap-2 justify-center p-3 rounded-lg text-sm font-['Open_Sans'] ${
+                      contactStatus === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+                    }`}>
+                      {contactStatus === 'success' ? <CheckCircle size={16} /> : <XCircle size={16} />}
+                      {statusMessage}
+                    </div>
+                  )}
 
                   <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
                     Ou envie um e-mail direto para:{' '}
@@ -385,16 +440,29 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2"
+                    disabled={workStatus === 'loading'}
+                    className="w-full bg-[#D3AF37] text-white px-8 py-4 rounded-lg font-['Open_Sans'] font-semibold hover:bg-[#B89A2E] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <Send size={20} />
-                    Enviar currículo
+                    {workStatus === 'loading' ? (
+                      <><Loader2 size={20} className="animate-spin" /> Enviando...</>
+                    ) : (
+                      <><Send size={20} /> Enviar currículo</>
+                    )}
                   </button>
+
+                  {workStatusMessage && (
+                    <div className={`flex items-center gap-2 justify-center p-3 rounded-lg text-sm font-['Open_Sans'] ${
+                      workStatus === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+                    }`}>
+                      {workStatus === 'success' ? <CheckCircle size={16} /> : <XCircle size={16} />}
+                      {workStatusMessage}
+                    </div>
+                  )}
 
                   <p className="font-['Open_Sans'] text-sm text-gray-500 text-center">
                     Ou envie diretamente para:{' '}
-                    <a href="mailto:rh@viapane.com.br" className="text-[#D3AF37] hover:underline font-semibold">
-                      rh@viapane.com.br
+                    <a href="mailto:mkt@viapane.com.br" className="text-[#D3AF37] hover:underline font-semibold">
+                      mkt@viapane.com.br
                     </a>
                   </p>
                 </form>
